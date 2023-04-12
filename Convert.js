@@ -7,9 +7,9 @@ const axios = require('axios');
 const FormData = require('form-data');
 const json = require('formidable/src/plugins/json');
 let data = new FormData();
-data.append('client_id', '1000.CE8QAHXO98IZN5HWJ7MPQ6N8CF8LGD');
-data.append('client_secret', 'f9e3dce07a66dab577fe1583866a6cc5069dbecb4c');
-data.append('refresh_token', '1000.d3ea5019aa9f88b24fa18b881806ca96.c48baae0ea057f4c04e66ce9068784d4');
+data.append('client_id', 'your client secret');
+data.append('client_secret', 'your client id');
+data.append('refresh_token', 'your refresh token');
 data.append('grant_type', 'refresh_token');
 
 let config = {
@@ -45,7 +45,7 @@ function getrecord(access_token){
 let config2 = {
   method: 'get',
   maxBodyLength: Infinity,
-  url: 'https://crm.zoho.com/crm/v2/API_Layer/5291167000004276006',
+  url: 'https://crm.zoho.com/crm/v2/API_Layer/'+id_data,
   headers: { 
     'Authorization': 'Zoho-oauthtoken '+access_token,
   },
@@ -103,7 +103,7 @@ console.log(record_idd,removelast_from,rec_amount,remove_last_to);
         maxBodyLength: Infinity,
         url: "https://api.apilayer.com/exchangerates_data/convert?to="+remove_last_to+"&from="+removelast_from+"&amount="+rec_amount,
         headers: { 
-          'apikey': 'CIIlz5eAf4KJH2bVjXI1dgTjU8uQieqI'
+          'apikey': 'your currency exchange apis'
         }
       };
       
